@@ -1,0 +1,40 @@
+<div *ngIf="studentForm" class="editDiv">
+    <form [formGroup]="studentForm" (ngSubmit)="askToSave()">
+        <div>
+            <label>full name:</label>
+        </div>
+        <div>
+            <input type="text" formControlName="fullName" />
+            <div>
+                {{studentForm.get('fullName').errors | json}}
+            </div>
+        </div>
+
+        <div>
+            <label>email :</label>
+        </div>
+        <div>
+            <input type="email" formControlName="email" />
+        </div>
+
+        <div>
+            <label>tz:</label>
+        </div>
+        <div>
+            <input type="text" formControlName="tz" />
+        </div>
+
+        <div>
+            <label>gender:</label>
+        </div>
+        <div>
+            <select formControlName="gender">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+        </div>
+        <div>
+            <button [disabled]="studentForm.invalid">Save</button>         
+        </div>
+    </form>
+</div>

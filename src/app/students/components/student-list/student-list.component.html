@@ -1,0 +1,11 @@
+<h2 *ngIf="title">{{title}}</h2>
+
+<div class="student-wrapper">
+    <div class="student-item" *ngFor="let item of students" (click)="setSelectedStudent(item)"
+    [class.selected]="item===selectedStudent">
+        <h3>{{item.fullName}}</h3>
+        <div>{{item.email}}</div>
+        <div>{{item.tz}}</div>
+        <div>{{item.grade}}</div>
+    </div>
+</div>

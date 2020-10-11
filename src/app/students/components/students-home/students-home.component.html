@@ -1,0 +1,10 @@
+<div class="main">
+    <div>
+        <app-student-list (selectedChange)="onSelectedChange($event)" title="male students" [students]="maleStudents" ></app-student-list>
+        <app-student-list (selectedChange)="onSelectedChange($event)" title="female students" [students]="femaleStudents"></app-student-list>
+    </div>
+    <div *ngIf="currentStudent">
+        <app-student-edit [editingStudent]="currentStudent" (saveRequested)="onSaveRequested($event)" ></app-student-edit>
+    </div>
+</div>
+
